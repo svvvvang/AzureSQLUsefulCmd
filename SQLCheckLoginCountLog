@@ -1,0 +1,8 @@
+#Execute the following in new query at instance level
+
+SELECT database_name, start_time, end_time, event_category,
+	event_type, event_subtype, event_subtype_desc, severity,
+	event_count, description
+FROM sys.event_log
+WHERE start_time >= '2023-09-14 12:00:00'
+    AND end_time <= '2023-09-15 12:00:00';
