@@ -1,3 +1,6 @@
+#Check if DB is contained DB
+#Exe at DB level, 0=Nil 1=Contained DB
+
 SELECT  
   name,
   containment
