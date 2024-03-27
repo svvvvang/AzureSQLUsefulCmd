@@ -1,0 +1,17 @@
+# SQL create users
+
+# To alter user password
+ALTER USER xxx WITH PASSWORD = 'xxx' OLD_PASSWORD = 'xxx'
+
+# To create Login user for direct login to sql server (exe at master db level)
+Create User [xxx] With PASSWORD = N'xxx'
+Go
+
+# To allow login user to acccess db (exe at db level)
+CREATE USER [xxx] FOR LOGIN [xxx]
+EXEC sp_addrolemember N'db_owner', N'xxx'
+
+# To delete user if it already exist in DB. Need to delete schema first. under DB, Security, Schemas
+IF EXISTS (SELECT * FROM sys.database_principals WHERE name = N'xxx')
+DROP USER [xxx]
+
