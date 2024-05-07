@@ -4,7 +4,7 @@
 ALTER USER xxx WITH PASSWORD = 'xxx' OLD_PASSWORD = 'xxx'
 
 # To create Login user for direct login to sql server (exe at master db level)
-Create User [xxx] With PASSWORD = N'xxx'
+Create Login [xxx] With PASSWORD = N'xxx'
 Go
 
 # To allow login user to acccess db (exe at db level)
