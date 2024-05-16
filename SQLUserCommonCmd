@@ -12,6 +12,7 @@ EXEC sp_addsrvrolemember @loginame = N'loginName', @rolename = N'securityadmin';
 
 #Grant login to be able to import database
 ALTER SERVER ROLE dbcreator ADD MEMBER [loginName];
+ALTER ROLE dbmanager ADD MEMBER loginName;  (for azure sql)
 
 # To allow login user to acccess db (exe at db level)
 CREATE USER [xxx] FOR LOGIN [xxx]
